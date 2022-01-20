@@ -1,5 +1,8 @@
-import {NgModule} from '@angular/core';
-import {RouterModule, Routes} from '@angular/router';
+import { NgModule } from '@angular/core';
+import { RouterModule, Routes } from '@angular/router';
+import { RegisterViewComponent } from '../register-view/register-view.component';
+
+
 import { ChatViewComponent } from 'src/chat/chat-view/chat-view.component';
 import { AppComponent } from './app.component';
 
@@ -12,14 +15,14 @@ const routes: Routes = [
   },
   {
     path: "registration",
-    component: ChatViewComponent
-    // component: RegisterViewComponent
+    component: RegisterViewComponent
   },
   {
     path: "chat",
     component: ChatViewComponent
   }
 ];
+
 
 @NgModule({
   imports: [RouterModule.forRoot(routes)],
