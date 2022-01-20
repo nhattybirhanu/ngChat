@@ -1,5 +1,9 @@
 import { Component, OnInit } from '@angular/core';
-import { ChatService } from 'lab/ngChatRoom/src/app/services/chat/chat-service.service';
+import { FormControl, FormGroup, Validators } from '@angular/forms';
+import { Router } from '@angular/router';
+import { RegistrationService } from 'lab/ngChatRoom/src/app/services/registration/registration.service';
+import { ChatService } from 'src/app/services/chat/chat.service';
+import { Registration } from 'src/chat/models/registration-model';
 
 @Component({
   selector: 'app-register-view',
@@ -8,12 +12,24 @@ import { ChatService } from 'lab/ngChatRoom/src/app/services/chat/chat-service.s
 })
 export class RegisterViewComponent implements OnInit {
   chatRoomList:String[]=[];
-  constructor(private chatService:ChatService) {
-
+  regForm:FormGroup;
+  constructor(private chatService:ChatService,private regService:RegistrationService,private router:Router) {
+      this.regForm=new FormGroup({
+        'username':new FormControl('',Validators.required),
+        'group':new FormControl('',Validators.required)
+      })
    }
 
   ngOnInit(): void {
   this.chatRoomList=this.chatService.getChatRooms();
+  }
+  reg(){
+    const reg:Registration={
+      chatRoom:this.regForm.value.group[0],
+      screenName:this.regForm.value.username
+    }
+      this.regService.register(reg);
+      this.router.navigate(['/chat'])
   }
 
 }

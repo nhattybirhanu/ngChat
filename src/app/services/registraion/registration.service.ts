@@ -1,8 +1,4 @@
 import {Injectable} from '@angular/core';
-<<<<<<< HEAD
-import { Registration } from 'lab/ngChatRoom/src/app/chat/models/registration.model';
-=======
->>>>>>> master
 import {BehaviorSubject} from "rxjs";
 import { Registration } from 'src/chat/models/registration-model';
 
