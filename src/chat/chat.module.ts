@@ -14,13 +14,16 @@ import { ChatViewComponent } from './chat-view/chat-view.component';
 import { RegistrationService } from 'src/app/services/registraion/registration.service';
 import { ChatService } from 'src/app/services/chat/chat.service';
 import { MatDividerModule } from '@angular/material/divider';
+import { RegisterViewComponent } from './register-view/register-view.component';
+import { MatTabsModule } from '@angular/material/tabs';
 
 
 
 @NgModule({
   declarations: [
     ChatViewComponent,
-    ConversationComponent
+    ConversationComponent,
+    RegisterViewComponent
   ],
   imports: [
     CommonModule,
@@ -34,7 +37,8 @@ import { MatDividerModule } from '@angular/material/divider';
     MatCardModule,
     MatGridListModule,
     ReactiveFormsModule,
-    MatDividerModule
+    MatDividerModule,
+    MatTabsModule,  
   ],
   exports: [
     ChatViewComponent

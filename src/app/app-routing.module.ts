@@ -1,6 +1,6 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
-import { RegisterViewComponent } from '../register-view/register-view.component';
+import { RegisterViewComponent } from '../chat/register-view/register-view.component';
 
 
 import { ChatViewComponent } from 'src/chat/chat-view/chat-view.component';
