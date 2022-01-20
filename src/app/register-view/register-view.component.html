@@ -1,1 +1,28 @@
-<p>register-view works!</p>
+<form>
+    <mat-card>
+      <mat-card-header>
+      
+      </mat-card-header>
+      <mat-card-content>
+        <mat-form-field appearance="outline">
+          <mat-label>Display Name</mat-label>
+          <input matInput placeholder="Placeholder">
+          <mat-icon matPrefix>account_box</mat-icon>
+          
+        </mat-form-field>
+        
+        <mat-selection-list #shoes [multiple]="false">
+          <mat-list-option >
+            Hello
+          </mat-list-option>
+          <mat-list-option >
+            Hello 1
+          </mat-list-option>
+        </mat-selection-list>
+        
+      </mat-card-content>
+      <mat-card-actions>
+        <button mat-button>Register</button>
+      </mat-card-actions>
+    </mat-card>
+  </form>

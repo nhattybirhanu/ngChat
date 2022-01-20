@@ -1,0 +1,9 @@
+.toolbar-items-container{
+    display: flex;
+    flex-wrap: nowrap;
+    justify-content: space-between;
+    width:100%
+    a{
+        font-size: medium;
+    }
+}
