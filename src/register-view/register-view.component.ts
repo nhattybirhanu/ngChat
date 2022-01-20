@@ -13,7 +13,7 @@ export class RegisterViewComponent implements OnInit {
    }
 
   ngOnInit(): void {
-  //  this.chatRoomList=this.chatService.getChatRooms();
+  this.chatRoomList=this.chatService.getChatRooms();
   }
 
 }
