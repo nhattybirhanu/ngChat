@@ -1,17 +1,19 @@
-<div>
-  <mat-toolbar class="toolbar-items-container">
-   ngChat
-   <div class="toolbat-item action">
-    <nav>
-      <a>Register</a>
-      <a>Chat</a>
-    </nav>
-   </div>
-   </mat-toolbar>
-   <div class="main">
 
-  <router-outlet></router-outlet>
-    
-     
-   </div>
+
+<div class="app-shell">
+  <mat-toolbar class="toolbar" color="primary">
+    <div class="toolbar-items-container">
+      <div class="toolbar-item">
+        <a routerLink="">Home</a>
+      </div>
+      <div class="toolbar-actions">
+        <a routerLink="/registration"> Register</a>
+        <a routerLink="/chats"> Chats</a>
+      </div>
+    </div>
+  </mat-toolbar>
+  <div class="main">
+    <router-outlet></router-outlet>
+  </div>
+
 </div>

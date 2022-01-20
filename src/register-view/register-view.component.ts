@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { ChatService } from 'lab/ngChatRoom/src/app/services/chat/chat-service.service';
 
 @Component({
   selector: 'app-register-view',
@@ -6,10 +7,13 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./register-view.component.scss']
 })
 export class RegisterViewComponent implements OnInit {
+  chatRoomList:String[]=[];
+  constructor(private chatService:ChatService) {
 
-  constructor() { }
+   }
 
   ngOnInit(): void {
+  //  this.chatRoomList=this.chatService.getChatRooms();
   }
 
 }
