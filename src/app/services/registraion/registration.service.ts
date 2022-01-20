@@ -1,6 +1,6 @@
 import {Injectable} from '@angular/core';
-import {Registration} from "../../chat/models/registration.model";
 import {BehaviorSubject} from "rxjs";
+import { Registration } from 'src/chat/models/registration-model';
 
 const KEY = "REGISTERED_USER";
 

@@ -1,7 +1,7 @@
 import {Injectable} from '@angular/core';
 import {HttpClient} from '@angular/common/http';
 import {BehaviorSubject, Observable} from 'rxjs';
-import {Chat} from "../../chat/models/chat.model";
+import { Chat } from 'src/chat/models/chat-model';
 
 @Injectable()
 export class ChatService {

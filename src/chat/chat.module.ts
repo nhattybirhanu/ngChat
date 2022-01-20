@@ -11,6 +11,9 @@ import {MatSelectModule} from "@angular/material/select";
 import {MatCardModule} from "@angular/material/card";
 import {MatGridListModule} from "@angular/material/grid-list";
 import { ChatViewComponent } from './chat-view/chat-view.component';
+import { RegistrationService } from 'src/app/services/registraion/registration.service';
+import { ChatService } from 'src/app/services/chat/chat.service';
+import { MatDividerModule } from '@angular/material/divider';
 
 
 
@@ -30,10 +33,15 @@ import { ChatViewComponent } from './chat-view/chat-view.component';
     MatSelectModule,
     MatCardModule,
     MatGridListModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    MatDividerModule
   ],
   exports: [
     ChatViewComponent
+  ],
+  providers: [
+    RegistrationService,
+    ChatService
   ]
 })
 export class ChatModule { }
