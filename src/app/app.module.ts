@@ -17,6 +17,7 @@ import { ChatModule } from 'src/chat/chat.module';
 import {MatTabsModule} from "@angular/material/tabs";
 import { ChatService } from './services/chat/chat.service';
 import { RegistrationService } from 'lab/ngChatRoom/src/app/services/registration/registration.service';
+import { HttpClientModule } from '@angular/common/http';
 
 
 @NgModule({
@@ -39,7 +40,8 @@ import { RegistrationService } from 'lab/ngChatRoom/src/app/services/registratio
     MatTabsModule,
     MatToolbarModule,
     MatButtonModule,
-    MatIconModule
+    MatIconModule,
+    HttpClientModule
   ],
   providers: [ChatService,RegistrationService],
   bootstrap: [AppComponent]

@@ -1,1 +1,18 @@
-<p>conversation works!</p>
+<div class="conversation-container">
+    <mat-form-field class="full-width">
+        <mat-label>Chat rooms</mat-label>
+        <select matNativeControl (change)="onSelectChatRoom($event)">
+            <option *ngFor="let room of chatRooms" [value]="room"> {{room}} </option>
+        </select>
+    </mat-form-field>
+    <mat-list>
+        <mat-list-item *ngFor="let chatMessage of chatMessages">
+            <div mat-list-avatar class="first-name-character" *ngIf="chatMessage.screenName">
+                {{chatMessage.screenName.charAt(0).toUpperCase()}}</div>
+            <div mat-line><strong *ngIf="chatMessage.screenName"> {{chatMessage.screenName}} </strong></div>
+            <div> {{chatMessage.timestamp | date}} </div>
+            <div mat-line> {{chatMessage.message}} </div>
+            <mat-divider></mat-divider>
+        </mat-list-item>
+    </mat-list>
+</div>
