@@ -1,8 +1,9 @@
 import { Component, OnInit } from '@angular/core';
-import { FormBuilder, Validators } from '@angular/forms';
+import { FormControl, FormGroup, Validators } from '@angular/forms';
+import { Router } from '@angular/router';
 import { ChatService } from 'src/app/services/chat/chat.service';
 import { RegistrationService } from 'src/app/services/registraion/registration.service';
-import { Chat } from '../models/chat-model';
+import { Registration } from 'src/chat/models/registration-model';
 
 @Component({
   selector: 'app-register-view',
@@ -10,29 +11,25 @@ import { Chat } from '../models/chat-model';
   styleUrls: ['./register-view.component.scss']
 })
 export class RegisterViewComponent implements OnInit {
-
-  chatRoomList: Chat[] = [];
-  
-  message: string =''
-  chatRooms: string[] = []
-  registrationFormGroup = this.fb.group({
-    screenName: ['', Validators.required],
-    chatRoom: ['', Validators.required]
-  });
-
-  constructor(private fb: FormBuilder, private chatService: ChatService, private registerService: RegistrationService) {
-  }
+  chatRoomList:String[]=[];
+  regForm:FormGroup;
+  constructor(private chatService:ChatService,private regService:RegistrationService,private router:Router) {
+      this.regForm=new FormGroup({
+        'username':new FormControl('',Validators.required),
+        'group':new FormControl('',Validators.required)
+      })
+   }
 
   ngOnInit(): void {
-    this.chatRooms = this.chatService.getChatRooms();
+  this.chatRoomList=this.chatService.getChatRooms();
   }
-
-  register() {
-    this.registerService.register(this.registrationFormGroup.value);
-    this.message = 'Succesfully Registered';
-  }
-  closeMessage(){
-    this.message = '';
+  reg(){
+    const reg:Registration={
+      chatRoom:this.regForm.value.group[0],
+      screenName:this.regForm.value.username
+    }
+      this.regService.register(reg);
+      this.router.navigate(['/chat'])
   }
 
 }
