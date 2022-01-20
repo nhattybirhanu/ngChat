@@ -16,7 +16,7 @@ const routes: Routes = [
     // component: RegisterViewComponent
   },
   {
-    path: "chats",
+    path: "chat",
     component: ChatViewComponent
   }
 ];

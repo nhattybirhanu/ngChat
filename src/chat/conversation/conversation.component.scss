@@ -1,0 +1,16 @@
+.conversation-container {
+    overflow-y: scroll;
+    height: 60vh;
+  
+    .first-name-character {
+      width: 40px;
+      height: 40px;
+      border-width: 50px;
+      line-height: 40px;
+      text-align: center;
+      background: rgb(random(255), random(255), random(255));
+    }
+  
+  }
+
+  
