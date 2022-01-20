@@ -1,18 +1,24 @@
 import {NgModule} from '@angular/core';
 import {RouterModule, Routes} from '@angular/router';
-import {ChatViewComponent} from "./chat/chat-view/chat-view.component";
-import {RegisterViewComponent} from "./chat/register-view/register-view.component";
+import { ChatViewComponent } from 'src/chat/chat-view/chat-view.component';
+import { AppComponent } from './app.component';
+
 
 const routes: Routes = [
   {
+    path: "",
+    redirectTo: '/',
+    pathMatch: 'full'
+  },
+  {
     path: "registration",
-    component: RegisterViewComponent
+    component: ChatViewComponent
+    // component: RegisterViewComponent
   },
   {
     path: "chats",
     component: ChatViewComponent
-  },
-  {path:'', component: RegisterViewComponent},
+  }
 ];
 
 @NgModule({
